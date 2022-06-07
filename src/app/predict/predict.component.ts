@@ -14,16 +14,17 @@ export class PredictComponent implements OnInit {
   isLoading = false;
   apiError = false;
   tagPredict = '';
+  enableMsg = false;
+  errMsg = '';
   constructor(private http: HttpService) {}
   predict() {
     if (this.inputText.length == 0) {
       this.error = true;
-      alert('Input should not be empty');
+      this.showMsg('Input should not be empty');
     } else if (/^\d+$/.test(this.inputText)) {
       this.error = true;
-      alert('Input should not have all numbers');
+      this.showMsg('Input should not have all numbers');
     } else {
-      console.log(this.inputText);
       this.http
         .get('/predict', { params: { data: this.inputText } })
         .subscribe({
@@ -32,10 +33,17 @@ export class PredictComponent implements OnInit {
           },
           error: (err: any) => {
             this.apiError = true;
+            this.showMsg('Api Failed');
           },
         });
     }
-    console.log(this.inputText);
+  }
+  showMsg(msg: string) {
+    this.enableMsg = true;
+    this.errMsg = msg;
+    setTimeout(() => {
+      this.enableMsg = false;
+    }, 2000);
   }
   ngOnInit(): void {}
 }

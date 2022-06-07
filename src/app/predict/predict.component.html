@@ -17,10 +17,16 @@
         [ngClass]="{ 'ng-invalid': error, 'ng-dirty': error }"
         [(ngModel)]="inputText"
       ></textarea>
-      <label for="float-input">{{ placeHolder }}</label>
+      <label for="float-input">{{ error ? errMsg : placeHolder }}</label>
     </span>
   </div>
 </div>
 <button type="button" class="btn btn-outline-primary round" (click)="predict()">
   Primary
 </button>
+<p-message
+  *ngIf="enableMsg"
+  severity="error"
+  text="{{ errMsg }}"
+  class="msg"
+></p-message>

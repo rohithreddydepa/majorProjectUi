@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-metrics',
   templateUrl: './metrics.component.html',
-  styleUrls: ['./metrics.component.scss']
+  styleUrls: ['./metrics.component.scss'],
 })
 export class MetricsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
+  tables = ['Title', 'Body', 'TitleBody'];
+  ngOnInit(): void {}
 }

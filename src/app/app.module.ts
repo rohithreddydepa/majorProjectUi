@@ -17,6 +17,10 @@ import { CardModule } from 'primeng/card';
 import { SkeletonModule } from 'primeng/skeleton';
 import { GraphComponent } from './graphs/graph/graph.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
+import { TableComponent } from './metrics/table/table.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +31,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     MetricsComponent,
     GraphsComponent,
     GraphComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     SkeletonModule,
     FormsModule,
     InputTextareaModule,
+    MessageModule,
+    MessagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
