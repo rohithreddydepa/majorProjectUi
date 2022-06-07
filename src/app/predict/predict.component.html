@@ -1,1 +1,26 @@
-<p>predict works!</p>
+<div class="row margin">
+  <div class="col-md-7">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda
+    provident excepturi dignissimos aperiam quia quod quaerat deserunt eos
+    dolores quo molestiae molestias voluptates laborum modi, repudiandae tenetur
+    sunt! Cumque, sequi?
+  </div>
+</div>
+<div class="row margin">
+  <div class="form-group">
+    <span class="p-float-label p-input-icon-right">
+      <i class="pi pi-spin pi-spinner" *ngIf="isLoading"></i>
+      <textarea
+        pInputTextarea
+        cols="30"
+        class="form-control"
+        [ngClass]="{ 'ng-invalid': error, 'ng-dirty': error }"
+        [(ngModel)]="inputText"
+      ></textarea>
+      <label for="float-input">{{ placeHolder }}</label>
+    </span>
+  </div>
+</div>
+<button type="button" class="btn btn-outline-primary round" (click)="predict()">
+  Primary
+</button>
