@@ -1,0 +1,10 @@
+<p-card *ngIf="!isLoading">
+  <p-chart type="bar" [data]="data" height="300px"></p-chart>
+</p-card>
+<p-card *ngIf="isLoading">
+  <div class="flex align-items-end">
+    <p-skeleton width="6rem" height="300px" class="width"></p-skeleton>
+    <p-skeleton width="6rem" height="200px" class="width"></p-skeleton>
+    <p-skeleton width="6rem" height="300px" class="width"></p-skeleton>
+  </div>
+</p-card>
