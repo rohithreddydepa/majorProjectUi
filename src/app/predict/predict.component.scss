@@ -1,17 +1,25 @@
 .round {
   border-radius: 100px;
+  font-size: 1.2rem;
 }
 .margin {
   margin-bottom: 1.5rem;
+}
+.list-width {
+  width: 50%;
+}
+.top-padding {
+  padding-top: 1rem;
 }
 .msg {
   width: 25%;
   position: absolute;
   z-index: 1000;
-  top: 0;
-  right: 0;
+  top: 30px;
+  right: 20px;
 }
-.p-inline-message.p-inline-message-error {
+.p-inline-message.p-inline-message-error,
+.p-inline-message.p-inline-message-success {
   width: 100%;
   justify-content: left;
 }

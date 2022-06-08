@@ -1,5 +1,9 @@
-<h1 class="heading">Graphs</h1>
-<div class="grid" *ngFor="let item of graphs">
+<h1 class="text-center">Graphs</h1>
+<div
+  class="grid"
+  *ngFor="let item of graphs; let i = index"
+  [ngClass]="{ 'grid-reverse': i === 1 }"
+>
   <div>
     <app-graph [type]="item"></app-graph>
   </div>

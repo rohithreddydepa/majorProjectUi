@@ -9,13 +9,13 @@ import { HttpService } from '../http.service';
 })
 export class PredictComponent implements OnInit {
   inputText = '';
-  placeHolder = 'Enter the text to predict';
   error = false;
   isLoading = false;
   apiError = false;
   tagPredict = '';
   enableMsg = false;
   errMsg = '';
+  placeHolder = 'Enter the text to predict';
   constructor(private http: HttpService) {}
   predict() {
     if (this.inputText.length == 0) {

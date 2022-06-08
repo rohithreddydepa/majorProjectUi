@@ -6,15 +6,22 @@
   padding: 10px;
   grid-gap: 2rem;
 }
-.heading {
-  display: flex;
-  justify-content: center;
+.grid-reverse {
+  direction: rtl;
 }
+
 .explain {
   margin: auto;
 }
 @media screen and(max-width: 600px) {
   .grid {
     grid-template-columns: 100%;
+  }
+  .grid-revese {
+    direction: inherit;
+    text-align: left;
+  }
+  .explain {
+    text-align: left;
   }
 }

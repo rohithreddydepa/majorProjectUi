@@ -1,14 +1,15 @@
 .p-card {
   border-radius: 20px;
-}
-.p-card:hover {
-  transition: 0.8s;
   box-shadow: -2px 7px 21px -9px rgb(0 0 0 / 75%);
 }
+// .p-card:hover {
+//   transition: 0.8s;
+//   box-shadow: -2px 7px 21px -9px rgb(0 0 0 / 75%);
+// }
 .flex {
   display: flex;
 }
-.width {
+.width-graph {
   margin-left: 1.5rem;
 }
 @media screen and(max-width: 500px) {

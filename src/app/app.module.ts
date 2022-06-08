@@ -18,9 +18,9 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { GraphComponent } from './graphs/graph/graph.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessageModule } from 'primeng/message';
-import { MessagesModule } from 'primeng/messages';
 import { TableComponent } from './metrics/table/table.component';
-
+import { ChipModule } from 'primeng/chip';
+import { TimelineModule } from 'primeng/timeline';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,8 @@ import { TableComponent } from './metrics/table/table.component';
     FormsModule,
     InputTextareaModule,
     MessageModule,
-    MessagesModule,
+    ChipModule,
+    TimelineModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
