@@ -1,5 +1,11 @@
 <p-card *ngIf="!isLoading">
-  <p-chart type="bar" [data]="data" height="300px"></p-chart>
+  <p-chart
+    *ngIf="!error; else error"
+    type="bar"
+    [data]="data"
+    height="300px"
+  ></p-chart>
+  <ng-template #error> Api error</ng-template>
 </p-card>
 <p-card *ngIf="isLoading">
   <div class="flex align-items-end">

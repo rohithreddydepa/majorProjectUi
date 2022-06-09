@@ -12,6 +12,7 @@ export class GraphComponent implements OnInit {
   @Input() type: string = '';
   isLoading = false;
   data: graph = {} as any;
+  error = false;
   constructor(public http: HttpService) {}
   ngOnInit() {
     this.isLoading = true;
@@ -27,7 +28,7 @@ export class GraphComponent implements OnInit {
       },
       error: (err) => {
         this.isLoading = false;
-        console.log('error');
+        err = true;
       },
     });
   }
