@@ -24,7 +24,6 @@ export class GraphComponent implements OnInit {
       next: (response: any) => {
         this.isLoading = false;
         this.data = response;
-        console.log(this.data);
       },
       error: (err) => {
         this.isLoading = false;
