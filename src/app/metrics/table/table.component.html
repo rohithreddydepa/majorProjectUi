@@ -1,5 +1,5 @@
 <p-card *ngIf="!isLoading">
-  <div *ngIf="!error; else error">
+  <div *ngIf="!apiError; else error">
     <h3 style="display: flex; justify-content: center">
       {{ tableName }} Values
     </h3>

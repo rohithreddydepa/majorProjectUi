@@ -1,6 +1,6 @@
 <p-card *ngIf="!isLoading">
   <p-chart
-    *ngIf="!error; else error"
+    *ngIf="!apiError; else error"
     type="bar"
     [data]="data"
     height="300px"

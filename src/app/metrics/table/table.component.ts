@@ -14,8 +14,10 @@ export class TableComponent implements OnInit {
   values: any[] = [];
   isLoading = false;
   error = false;
+  apiError = false;
   ngOnInit(): void {
     this.isLoading = true;
+    this.apiError = false;
     this.http.get('/metrics', { params: { model: this.tableName } }).subscribe({
       next: (response: any) => {
         this.isLoading = false;
@@ -25,6 +27,7 @@ export class TableComponent implements OnInit {
       error: (err: any) => {
         this.isLoading = false;
         this.error = true;
+        this.apiError = true;
       },
     });
   }

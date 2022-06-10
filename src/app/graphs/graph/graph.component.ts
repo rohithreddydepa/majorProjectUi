@@ -13,6 +13,7 @@ export class GraphComponent implements OnInit {
   isLoading = false;
   data: graph = {} as any;
   error = false;
+  apiError = false;
   constructor(public http: HttpService) {}
   ngOnInit() {
     this.isLoading = true;
@@ -20,6 +21,7 @@ export class GraphComponent implements OnInit {
   }
   getData() {
     this.isLoading = true;
+    this.apiError = false;
     this.http.get(`/graphs`, { params: { type: this.type } }).subscribe({
       next: (response: any) => {
         this.isLoading = false;
@@ -27,6 +29,7 @@ export class GraphComponent implements OnInit {
       },
       error: (err) => {
         this.isLoading = false;
+        this.apiError = true;
         err = true;
       },
     });
