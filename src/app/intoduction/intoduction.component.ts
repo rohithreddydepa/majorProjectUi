@@ -22,28 +22,36 @@ export class IntoductionComponent implements OnInit {
 
     this.events = [
       {
-        status: 'Start',
+        status: 'Data preprocessing',
         id: '0',
         icon: PrimeIcons.CIRCLE,
-        date: '15/10/2020 10:30',
+        date: '',
         showMore: true,
-        data: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!',
+        data: 'Data preprocessing is the first and foremost and most necessary process before feeding the data into the machine learning model. According to the model, the reason behind the data set demand  for distinct and specific details is to find out the required features of that information. Some of the data preprocessing steps we used are removing html tags and punctuation marks, converting all letters to lower case etc. for the better prediction of tags.' ,
       },
       {
-        status: 'Start',
+        status: 'Training the model',
         id: '1',
         icon: PrimeIcons.CIRCLE,
-        date: '15/10/2020 10:30',
+        date: '',
         showMore: true,
-        data: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!',
+        data: 'This step is the crux of the project. The model training step involves exploring, analysing and engineering new features, splitting dataset, making the choice for the most suitable algorithm and then validating the created model for the prediction. We have split the dataset 80-20 and decided to go with the OneVsRest classifier algorithm of LinearSVC owing to the size and complexity of the dataset.',
       },
       {
-        status: 'Start',
+        status: 'Result analysis',
         id: '2',
         icon: PrimeIcons.CIRCLE,
-        date: '15/10/2020 10:30',
+        date: '',
         showMore: true,
-        data: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!',
+        data: 'This step is important to interpret the results achieved. The various performance measures of Machine Learning like F1 Score, Precision, Recall and Hamming Loss(HL) have been studied. These performance measures have been compared for the 3 different categories-Title based prediction, Body based prediction and Body and Title based prediction. Graphs are displayed for easy visual interpretation.',
+      },
+      {
+        status: 'User Interface',
+        id: '2',
+        icon: PrimeIcons.CIRCLE,
+        date: '',
+        showMore: true,
+        data: 'Ease of use of the given model is equally important and one of the major requirements. We have used various front end technologies like Angular, HTML, CSS, Bootstrap etc to improve the user interface. This step is quite necessary as ultimately this entire process is for making the tag prediction system more efficient ',
       },
     ];
   }

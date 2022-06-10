@@ -33,6 +33,10 @@
     flex: none !important;
   }
   .p-card .p-card-body {
-    width: 19rem;
+    width: 12rem;
+  }
+  .row > * {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

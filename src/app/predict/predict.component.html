@@ -1,13 +1,14 @@
 <h1 class="text-center">Predict Tags</h1>
 <div class="container text-center">
   <div class="row margin top-padding">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda
-    provident excepturi dignissimos aperiam quia quod quaerat deserunt eos
-    dolores quo molestiae molestias voluptates laborum modi, repudiandae tenetur
-    sunt! Cumque, sequi?
+    Our model is built to make predictions for the tags C#, Java, Android, PHP
+    and Javascript currently.We have restricted the input fields to not to be
+    empty and also not consist of only numbers.
   </div>
   <div class="row margin" style="justify-content: center">
-    <h3>Tags we can Predict</h3>
+    <h3 *ngIf="tagPredict.length == 0; else predictTag">Tags we can Predict</h3>
+    <ng-template #predictTag> <h3>Tag Predicted is :</h3></ng-template>
+
     <ul class="list-group list-width">
       <li class="list-group-item" [ngClass]="{ active: tagPredict === 'java' }">
         Java
