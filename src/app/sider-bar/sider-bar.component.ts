@@ -8,4 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class SiderBarComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
+  color = [true, false, false, false, false];
+  onClick(index: number) {
+    this.color = [false, false, false, false, false];
+    this.color[index] = true;
+  }
 }
