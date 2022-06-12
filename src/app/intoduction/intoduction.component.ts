@@ -27,7 +27,7 @@ export class IntoductionComponent implements OnInit {
         icon: PrimeIcons.CIRCLE,
         date: '',
         showMore: true,
-        data: 'Data preprocessing is the first and foremost and most necessary process before feeding the data into the machine learning model. According to the model, the reason behind the data set demand  for distinct and specific details is to find out the required features of that information. Some of the data preprocessing steps we used are removing html tags and punctuation marks, converting all letters to lower case etc. for the better prediction of tags.' ,
+        data: 'Data preprocessing is the first and foremost and most necessary process before feeding the data into the machine learning model. According to the model, the reason behind the data set demand  for distinct and specific details is to find out the required features of that information. Some of the data preprocessing steps we used are removing html tags and punctuation marks, converting all letters to lower case etc. for the better prediction of tags.',
       },
       {
         status: 'Training the model',
@@ -47,7 +47,7 @@ export class IntoductionComponent implements OnInit {
       },
       {
         status: 'User Interface',
-        id: '2',
+        id: '3',
         icon: PrimeIcons.CIRCLE,
         date: '',
         showMore: true,
