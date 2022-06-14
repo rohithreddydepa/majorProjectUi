@@ -11,7 +11,25 @@
     tagging for various category of questions using Machine Learning and Natural
     Language Processing.
   </div>
+  <h3>Steps we follow to predict the tag</h3>
+  <p-timeline [value]="events" [align]="align" styleClass="customized-timeline">
+    <ng-template pTemplate="content" let-event>
+      <p-card [header]="event.status" [subheader]="event.date">
+        <p>
+          {{ event.data.substring(0, 200) }}
+          <span *ngIf="event.showMore; else totalData">...</span>
+          <ng-template #totalData>
+            {{ event.data.substring(200) }}
+          </ng-template>
+        </p>
+        <button class="btn btn-outline-primary" (click)="toggle(event.id)">
+          {{ event.showMore ? "Show More" : "Show Less" }}
+        </button>
+      </p-card>
+    </ng-template>
+  </p-timeline>
   <div class="row">
+    <h4>Code for the Project is in the Github Repository</h4>
     <div class="col-md-6" style="margin-bottom: 1rem">
       <a
         href="https://github.com/rohithreddydepa/majorProjectUi"
@@ -28,20 +46,4 @@
       </a>
     </div>
   </div>
-  <p-timeline [value]="events" [align]="align" styleClass="customized-timeline">
-    <ng-template pTemplate="content" let-event>
-      <p-card [header]="event.status" [subheader]="event.date">
-        <p>
-          {{ event.data.substring(0, event.data.length / 2) }}
-          <span *ngIf="event.showMore; else totalData">...</span
-          ><ng-template #totalData>
-            {{ event.data.substring(event.data.length / 2) }}</ng-template
-          >
-        </p>
-        <button class="btn btn-outline-primary" (click)="toggle(event.id)">
-          {{ event.showMore ? "Show More" : "Show Less" }}
-        </button>
-      </p-card>
-    </ng-template>
-  </p-timeline>
 </div>
