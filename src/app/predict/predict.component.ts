@@ -10,12 +10,13 @@ import { HttpService } from '../http.service';
 export class PredictComponent implements OnInit {
   inputText = '';
   error = false;
-  isLoading = false;
   apiError = false;
   tagPredict = '';
   enableMsg = false;
   errMsg = '';
   placeHolder = 'Enter the text to predict';
+  tags=['java','c#','android','php','javascript'];
+
   constructor(private http: HttpService) {}
   predict() {
     if (this.inputText.length == 0) {

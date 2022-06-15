@@ -1,42 +1,19 @@
-<h1 class="text-center">Predict Tags</h1>
 <div class="container text-center">
-  <div class="row margin top-padding">
-    Our model is built to make predictions for the tags C#, Java, Android, PHP
-    and Javascript currently.We have restricted the input fields to not to be
+  <h1 class="text-center">Predict Tags</h1>
+  <div class="row predict-section">
+    Enter the Title and Body of the Question in the input field to Predict the tag .We have restricted the input fields to not to be
     empty and also not consist of only numbers.
   </div>
-  <div class="row margin" style="justify-content: center">
+  <div class="row predict-section" >
     <h3 *ngIf="tagPredict.length == 0; else predictTag">Tags we can Predict</h3>
     <ng-template #predictTag> <h3>Tag Predicted is :</h3></ng-template>
-
     <ul class="list-group list-width">
-      <li class="list-group-item" [ngClass]="{ active: tagPredict === 'java' }">
-        Java
-      </li>
-      <li class="list-group-item" [ngClass]="{ active: tagPredict === 'c#' }">
-        C#
-      </li>
-      <li
-        class="list-group-item"
-        [ngClass]="{ active: tagPredict === 'android' }"
-      >
-        Android
-      </li>
-      <li class="list-group-item" [ngClass]="{ active: tagPredict === 'php' }">
-        Php
-      </li>
-      <li
-        class="list-group-item"
-        [ngClass]="{ active: tagPredict === 'javascript' }"
-      >
-        JavaScript
-      </li>
+      <li class="list-group-item" *ngFor="let item of tags" [ngClass]="{ active: tagPredict === item  }">{{item |titlecase}}</li>
     </ul>
   </div>
   <div class="row margin">
     <div class="form-group">
       <span class="p-float-label p-input-icon-right">
-        <i class="pi pi-spin pi-spinner" *ngIf="isLoading"></i>
         <textarea
           pInputTextarea
           cols="30"
@@ -65,9 +42,9 @@
     <p-chip label="{{ tagPredict }}"></p-chip>
   </div>
   <p-message
-    *ngIf="enableMsg"
-    severity="error"
-    text="{{ errMsg }}"
-    class="msg"
-  ></p-message>
+  *ngIf="enableMsg"
+  severity="error"
+  text="{{ errMsg }}"
+  class="msg"
+></p-message>
 </div>
