@@ -21,6 +21,7 @@ import { MessageModule } from 'primeng/message';
 import { TableComponent } from './metrics/table/table.component';
 import { ChipModule } from 'primeng/chip';
 import { TimelineModule } from 'primeng/timeline';
+import {DockModule} from 'primeng/dock';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { TimelineModule } from 'primeng/timeline';
     MessageModule,
     ChipModule,
     TimelineModule,
+    DockModule
   ],
   providers: [],
   bootstrap: [AppComponent],

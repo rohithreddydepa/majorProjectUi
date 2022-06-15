@@ -1,75 +1,14 @@
-<div class="container-fluid">
-  <div class="row flex-nowrap">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-purple">
-      <div
-        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
-      >
-        <ul
-          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-          id="menu"
-        >
-          <li class="nav-item" (click)="onClick(0)">
-            <a routerLink="/" class="nav-link px-0">
-              <i class="fs-4 bi-house-door"></i>
-              <span
-                class="ms-1 d-none d-sm-inline"
-                [ngStyle]="{ color: color[0] ? '#fc0a2a' : 'inherit' }"
-              >
-                Home</span
-              >
-            </a>
-          </li>
-          <li>
-            <a
-              routerLink="/analysis"
-              class="nav-link px-0"
-              (click)="onClick(1)"
-            >
-              <i class="fs-4 bi-search"></i>
-              <span
-                class="ms-1 d-none d-sm-inline"
-                [ngStyle]="{ color: color[1] ? '#fc0a2a' : 'inherit' }"
-              >
-                Analysis</span
-              >
-            </a>
-          </li>
-          <li>
-            <a routerLink="/metrics" class="nav-link px-0" (click)="onClick(2)">
-              <i class="fs-4 bi-speedometer2"></i>
-              <span
-                class="ms-1 d-none d-sm-inline"
-                [ngStyle]="{ color: color[2] ? '#fc0a2a' : 'inherit' }"
-              >
-                Performance metrics</span
-              >
-            </a>
-          </li>
-          <li>
-            <a routerLink="/graphs" class="nav-link px-0" (click)="onClick(3)">
-              <i class="fs-4 bi-bar-chart"></i>
-              <span
-                class="ms-1 d-none d-sm-inline"
-                [ngStyle]="{ color: color[3] ? '#fc0a2a' : 'inherit' }"
-              >
-                Graphs</span
-              >
-            </a>
-          </li>
-          <li>
-            <a routerLink="/predict" class="nav-link px-0" (click)="onClick(4)">
-              <i class="fs-4 bi-graph-up-arrow"></i>
-              <span
-                class="ms-1 d-none d-sm-inline"
-                [ngStyle]="{ color: color[4] ? '#fc0a2a' : 'inherit' }"
-              >
-                Predict</span
-              ></a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col py-3"><ng-content></ng-content></div>
-  </div>
-</div>
+<p-dock [model]="dockItems" position="left" >
+  <ng-template pTemplate="item" let-item>
+    <li class="nav-item" (click)="onClick(0)">
+        <span style="display: flex;" routerLink={{item.link}}>
+          <i class={{item.icon}} [title]="item.label"></i>
+          <span class="ms-1 d-none d-sm-inline box" >
+            {{item.label}}
+          </span>
+        </span>
+      <!-- </a> -->
+    </li>
+  </ng-template>
+</p-dock>
+<div class="data"><ng-content></ng-content></div>

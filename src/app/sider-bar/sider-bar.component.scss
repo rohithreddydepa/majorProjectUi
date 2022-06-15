@@ -7,3 +7,28 @@
 .active {
   background-color: black;
 }
+.p-dock .p-dock-action{
+  width: fit-content;
+}
+.p-dock-left .p-dock-list{
+  border-top-right-radius: 59px;
+  border-bottom-right-radius: 55px;
+  background-color: aliceblue;
+  position: fixed;
+  top: 24%;
+}
+.p-ripple{
+  text-decoration: none;
+}
+.box{
+  padding-top: 6px;
+  padding-left: 6px;
+}
+.data{
+  padding-left: 100px;
+}
+@media screen and(max-width: 600px) {
+  .data{
+    padding-left: 65px;
+  }
+}
