@@ -11,14 +11,14 @@ export class PredictComponent implements OnInit {
   inputText = '';
   error = false;
   apiError = false;
-  tagPredict = '';
+  tagPredict =[];
   enableMsg = false;
   errMsg = '';
   placeHolder = 'Enter the text to predict';
-  tags=['java','c#','android','php','javascript'];
-
+  predictClick=false;
   constructor(private http: HttpService) {}
   predict() {
+    this.predictClick=false;
     if (this.inputText.length == 0) {
       this.error = true;
       this.showMsg('Input should not be empty');
@@ -27,10 +27,11 @@ export class PredictComponent implements OnInit {
       this.showMsg('Input should not have all numbers');
     } else {
       this.http
-        .get('/predictTag', { params: { data: this.inputText } })
+        .get('/predictTag', { params: { q: this.inputText } })
         .subscribe({
           next: (response: any) => {
-            this.tagPredict = response;
+            this.tagPredict = response.tags
+            this.predictClick=true;
           },
           error: (err: any) => {
             this.apiError = true;
