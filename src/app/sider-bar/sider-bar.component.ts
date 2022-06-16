@@ -43,11 +43,9 @@ export class SiderBarComponent implements OnInit {
                 link:'/predict'
             }
         ];
-
     }
-  color = [true, false, false, false, false];
   onClick(index: number) {
-    this.color = [false, false, false, false, false];
-    this.color[index] = true;
+    for(let i=0;i<5;i++) this.dockItems[i].active=false;
+    this.dockItems[index].active=true;
   }
 }
