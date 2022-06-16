@@ -1,3 +1,4 @@
+.intro{
 .width {
   width: 50rem;
 }
@@ -18,7 +19,9 @@
 .p-card {
   margin: 1rem;
 }
+}
 @media only screen and (max-width: 500px) {
+  .intro{
   .width {
     width: 100%;
   }
@@ -39,4 +42,5 @@
     padding-left: 0;
     padding-right: 0;
   }
+}
 }
