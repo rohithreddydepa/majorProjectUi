@@ -4,6 +4,7 @@ import { AnalysisComponent } from './analysis/analysis.component';
 import { GraphsComponent } from './graphs/graphs.component';
 import { IntoductionComponent } from './intoduction/intoduction.component';
 import { MetricsComponent } from './metrics/metrics.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PredictComponent } from './predict/predict.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'analysis', component: AnalysisComponent },
   { path: 'graphs', component: GraphsComponent },
   { path: 'metrics', component: MetricsComponent },
+  { path: '**', pathMatch: 'full', component: PageNotFoundComponent},
 ];
 
 @NgModule({

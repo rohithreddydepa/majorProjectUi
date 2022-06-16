@@ -22,6 +22,7 @@ import { TableComponent } from './metrics/table/table.component';
 import { ChipModule } from 'primeng/chip';
 import { TimelineModule } from 'primeng/timeline';
 import {DockModule} from 'primeng/dock';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import {DockModule} from 'primeng/dock';
     GraphsComponent,
     GraphComponent,
     TableComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
