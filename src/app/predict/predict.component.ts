@@ -27,7 +27,7 @@ export class PredictComponent implements OnInit {
       this.showMsg('Input should not have all numbers');
     } else {
       this.http
-        .get('/predict', { params: { data: this.inputText } })
+        .get('/predictTag', { params: { data: this.inputText } })
         .subscribe({
           next: (response: any) => {
             this.tagPredict = response;

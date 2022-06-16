@@ -22,7 +22,7 @@ export class GraphComponent implements OnInit {
   getData() {
     this.isLoading = true;
     this.apiError = false;
-    this.http.get(`/graphs`, { params: { type: this.type } }).subscribe({
+    this.http.get(`/graph`, { params: { type: this.type } }).subscribe({
       next: (response: any) => {
         this.isLoading = false;
         this.data = response;

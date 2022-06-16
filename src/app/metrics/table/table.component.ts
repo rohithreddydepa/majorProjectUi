@@ -18,7 +18,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
     this.apiError = false;
-    this.http.get('/metrics', { params: { model: this.tableName } }).subscribe({
+    this.http.get('/metric', { params: { model: this.tableName } }).subscribe({
       next: (response: any) => {
         this.isLoading = false;
         this.labels = response.labels;
