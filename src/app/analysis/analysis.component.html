@@ -24,6 +24,11 @@
         tagging system is necessary.
       </div>
     </li>
+    <div class="col-md-8" style="margin: auto">
+      <p-card>
+        <p-chart type="doughnut" [data]="data" height="400"></p-chart>
+      </p-card>
+    </div>
     <li>
       <div class="row section">
         To solve this problem, we are using a multi label classification system
@@ -44,9 +49,5 @@
       </div>
     </li>
   </ul>
-  <div class="col-md-8" style="margin: auto">
-    <p-card>
-      <p-chart type="doughnut" [data]="data" height="400"></p-chart>
-    </p-card>
-  </div>
+  
 </div>
