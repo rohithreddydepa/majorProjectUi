@@ -50,6 +50,13 @@ export class PredictComponent implements OnInit {
       this.enableMsg = false;
     }, 2000);
   }
+  clear() {
+    this.inputText = '';
+    this.errMsg = '';
+    this.error = false;
+    this.tagPredict = [];
+    this.predictClick = false;
+  }
   ngOnInit(): void {
     this.http.getTheme().subscribe((data) => {
       this.dTheme = data;

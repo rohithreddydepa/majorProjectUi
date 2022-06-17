@@ -48,6 +48,13 @@
         >
           Predict
         </button>
+        <button
+          type="button"
+          class="btn btn-outline-primary round imp-margin-left"
+          (click)="clear()"
+        >
+          Clear
+        </button>
         <div class="row" *ngIf="tagPredict.length != 0">
           <h3 *ngIf="tagPredict.length === 1">Tag predicted as:</h3>
           <h3 *ngIf="tagPredict.length > 1">Possible Tags are:</h3>
