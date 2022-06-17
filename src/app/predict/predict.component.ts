@@ -11,14 +11,17 @@ export class PredictComponent implements OnInit {
   inputText = '';
   error = false;
   apiError = false;
-  tagPredict =[];
+  tagPredict = [];
   enableMsg = false;
   errMsg = '';
   placeHolder = 'Enter the text to predict';
-  predictClick=false;
+  predictClick = false;
+  accuracy = 80;
+  dTheme: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
   constructor(private http: HttpService) {}
+
   predict() {
-    this.predictClick=false;
+    this.predictClick = false;
     if (this.inputText.length == 0) {
       this.error = true;
       this.showMsg('Input should not be empty');
@@ -30,8 +33,8 @@ export class PredictComponent implements OnInit {
         .get('/predictTag', { params: { q: this.inputText } })
         .subscribe({
           next: (response: any) => {
-            this.tagPredict = response.tags
-            this.predictClick=true;
+            this.tagPredict = response.tags;
+            this.predictClick = true;
           },
           error: (err: any) => {
             this.apiError = true;
@@ -47,5 +50,10 @@ export class PredictComponent implements OnInit {
       this.enableMsg = false;
     }, 2000);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http.getTheme().subscribe((data) => {
+      this.dTheme = data;
+      console.log(this.dTheme);
+    });
+  }
 }

@@ -1,0 +1,27 @@
+.dark {
+  background-color: #121212;
+  color: white;
+}
+.light {
+  background-color: white;
+  color: black;
+}
+.theme-wrapper {
+  z-index: 1000 !important;
+  position: fixed;
+  left: 0;
+  bottom: 10%;
+  height: 34px;
+  width: 36px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: #ececec;
+  .theme-btn {
+    height: 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .theme-wrapper {
+    bottom: 10%;
+  }
+}

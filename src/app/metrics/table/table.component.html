@@ -3,7 +3,7 @@
     <h3 style="display: flex; justify-content: center">
       {{ tableName }} Values
     </h3>
-    <table class="table table-striped">
+    <table class="table" [ngStyle]="{ color: this.dTheme ? 'white' : 'black' }">
       <thead>
         <tr>
           <th scope="col">#</th>

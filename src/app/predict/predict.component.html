@@ -1,54 +1,72 @@
-<div class="container text-center">
-  <h1 class="text-center">Predict Tags</h1>
-  <div class="row predict-section">
-    <ul style="list-style-type: none;">
-      <li>
-        Enter the Title and Body of the Question in the input field to Predict the tag .
-      </li>
-      <li>
-        We have restricted the input fields to not to be empty and also not consist of only numbers.
-      </li>
-    </ul>
-    
-  </div>
-  <img src="../../assets/predictImage.png" alt="" class="responsive" width="600" height="400">
-  <div class="row margin">
-    <div class="form-group">
-      <span class="p-float-label p-input-icon-right">
-        <textarea
-          pInputTextarea
-          cols="30"
-          class="form-control"
-          [ngClass]="{ 'ng-invalid': error, 'ng-dirty': error }"
-          [(ngModel)]="inputText"
-        ></textarea>
-        <label for="float-input">{{ error ? errMsg : placeHolder }}</label>
-      </span>
+<div class="container-fluid predictPage">
+  <div class="row flex-center">
+    <div class="col-md-6">
+      <h1 class="text-center" style="margin-bottom: 3rem">Predict Tags</h1>
+      <h4 class="text-center imp-margin-bottom">Instructions to follow</h4>
+      <ol>
+        <li>Enter the Question in the input field to Predict the tag .</li>
+        <li>Input can't be empty or numeric</li>
+        <li>
+          If we are anable to Predict the tag enter extra data to identify
+        </li>
+      </ol>
     </div>
   </div>
+  <div class="row flex-center">
+    <div class="col-md-6 text-center">
+      <p-card>
+        <div class="row imp-margin-bottom">
+          <h6>Accuracy of our Current model is</h6>
+          <p-knob [(ngModel)]="accuracy" [readonly]="true"></p-knob>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <span class="p-float-label p-input-icon-right">
+              <textarea
+                pInputTextarea
+                rows="4"
+                cols="60"
+                class="form-control"
+                [ngClass]="{
+                  'ng-invalid': error,
+                  'ng-dirty': error,
+                  'black-textarea': dTheme
+                }"
+                [(ngModel)]="inputText"
+              ></textarea>
+              <label for="float-input">{{
+                error ? errMsg : placeHolder
+              }}</label>
+            </span>
+          </div>
+        </div>
 
-  <button
-    type="button"
-    class="btn btn-outline-primary round margin"
-    (click)="predict()"
-  >
-    Predict
-  </button>
-  <div class="row" style="justify-content: center" *ngIf="tagPredict.length != 0">
-    <h3 *ngIf="tagPredict.length===1"> Tag predicted as:</h3>
-    <h3 *ngIf="tagPredict.length>1"> Possible Tags are: </h3>
-    <div style="display: flex;justify-content: center;" >
-      <p-chip *ngFor="let item of tagPredict" label="{{ item }}"></p-chip>
+        <button
+          type="button"
+          class="btn btn-outline-primary round margin"
+          (click)="predict()"
+        >
+          Predict
+        </button>
+        <div class="row" *ngIf="tagPredict.length != 0">
+          <h3 *ngIf="tagPredict.length === 1">Tag predicted as:</h3>
+          <h3 *ngIf="tagPredict.length > 1">Possible Tags are:</h3>
+          <div class="imp-margin-bottom" *ngFor="let item of tagPredict">
+            <p-chip label="{{ item }}"></p-chip>
+          </div>
+        </div>
+
+        <div *ngIf="tagPredict.length === 0 && predictClick">
+          <h3>Enter more data to predict the tag</h3>
+        </div>
+      </p-card>
     </div>
   </div>
+</div>
 
-
-
-<div *ngIf="tagPredict.length===0 && predictClick"> <h3>Enter more data to predict the tag</h3></div>
-  <p-message
+<p-message
   *ngIf="enableMsg"
   severity="error"
   text="{{ errMsg }}"
   class="msg"
 ></p-message>
-</div>

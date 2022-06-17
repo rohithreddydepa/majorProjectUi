@@ -1,13 +1,19 @@
-<p-dock [model]="dockItems" position="left" >
-  <ng-template pTemplate="item" let-item>
-    <li class="nav-item" (click)="onClick(0)">
-        <span style="display: flex;" routerLink={{item.link}}>
-          <i class={{item.icon}} [title]="item.label"></i>
-          <span class="ms-1 d-none d-sm-inline box" >
-            {{item.label}}
+<div class="side">
+  <p-dock [model]="dockItems" position="left">
+    <ng-template
+      pTemplate="item"
+      let-item
+      [ngClass]="false ? 'darkDock' : 'lightDoc'"
+    >
+      <li class="nav-item">
+        <span routerLink="{{ item.link }}">
+          <i class="{{ item.icon }}" [title]="item.label"></i>
+          <span class="ms-1 d-none d-sm-inline box">
+            {{ item.label }}
           </span>
         </span>
-    </li>
-  </ng-template>
-</p-dock>
-<div class="data"><ng-content></ng-content></div>
+      </li>
+    </ng-template>
+  </p-dock>
+  <div class="data"><ng-content></ng-content></div>
+</div>

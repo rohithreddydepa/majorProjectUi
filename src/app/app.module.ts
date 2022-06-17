@@ -21,8 +21,9 @@ import { MessageModule } from 'primeng/message';
 import { TableComponent } from './metrics/table/table.component';
 import { ChipModule } from 'primeng/chip';
 import { TimelineModule } from 'primeng/timeline';
-import {DockModule} from 'primeng/dock';
+import { DockModule } from 'primeng/dock';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { KnobModule } from 'primeng/knob';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MessageModule,
     ChipModule,
     TimelineModule,
-    DockModule
+    DockModule,
+    KnobModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

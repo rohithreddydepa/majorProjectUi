@@ -15,7 +15,6 @@ export class IntoductionComponent implements OnInit {
     this.events[data].showMore = !this.events[data].showMore;
   }
   ngOnInit() {
-    console.log(window.innerWidth);
     if (window.innerWidth < 500) {
       this.align = '';
     }

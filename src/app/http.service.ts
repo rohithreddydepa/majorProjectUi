@@ -1,5 +1,7 @@
+import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,7 +9,19 @@ import { environment } from 'src/environments/environment';
 })
 export class HttpService {
   baseUrl = environment.baseUrl;
-  constructor(public http: HttpClient) {}
+  private theme = new Subject<boolean>();
+  getTheme(): Observable<boolean> {
+    return this.theme.asObservable();
+  }
+  setTheme(data: boolean) {
+    this.theme.next(data);
+  }
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    public http: HttpClient
+  ) {
+    this.theme.next(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
   public get(url: string, body?: any) {
     return this.http.get(`${this.baseUrl}${url}`, body);
   }

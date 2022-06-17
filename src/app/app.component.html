@@ -1,1 +1,10 @@
-<app-sider-bar><router-outlet></router-outlet></app-sider-bar>
+<div class="theme-wrapper" (click)="changeTheme()">
+    <img
+      [src]="dTheme ? '../assets/light.svg' : '../assets/dark.svg'"
+      alt="Theme toggle"
+      class="theme-btn"
+    />
+</div>
+  <div [ngClass]="dTheme ? 'dark' : 'light'">
+      <app-sider-bar><router-outlet></router-outlet></app-sider-bar>
+  </div>

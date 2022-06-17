@@ -15,9 +15,14 @@ export class TableComponent implements OnInit {
   isLoading = false;
   error = false;
   apiError = false;
+  dTheme: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
   ngOnInit(): void {
     this.isLoading = true;
     this.apiError = false;
+    this.http.getTheme().subscribe((data) => {
+      this.dTheme = data;
+      // console.log(this.dTheme);
+    });
     this.http.get('/metric', { params: { model: this.tableName } }).subscribe({
       next: (response: any) => {
         this.isLoading = false;

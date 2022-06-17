@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpService } from 'src/app/http.service';
-import { graph } from 'src/app/models';
 
 @Component({
   selector: 'app-graph',
@@ -11,21 +10,31 @@ import { graph } from 'src/app/models';
 export class GraphComponent implements OnInit {
   @Input() type: string = '';
   isLoading = false;
-  data: graph = {} as any;
+  data = {};
   error = false;
   apiError = false;
   constructor(public http: HttpService) {}
   ngOnInit() {
-    this.isLoading = true;
     this.getData();
   }
+
   getData() {
     this.isLoading = true;
     this.apiError = false;
     this.http.get(`/graph`, { params: { type: this.type } }).subscribe({
       next: (response: any) => {
         this.isLoading = false;
-        this.data = response;
+        this.data = {
+          labels: ['Title', 'Body', 'TitleBody'],
+          datasets: [
+            {
+              label: this.type,
+              backgroundColor:
+                this.type === 'Precision' ? '#FFA726' : '#42A5F5',
+              data: response.data,
+            },
+          ],
+        };
       },
       error: (err) => {
         this.isLoading = false;

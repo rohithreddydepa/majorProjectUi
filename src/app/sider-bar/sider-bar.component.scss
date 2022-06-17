@@ -1,35 +1,36 @@
-.bg-purple {
-  background-color: #eff3ff;
-  // background-color: #d4fbff;
-  // background-color: #e7dbff;
-  // background-color: #fcf7f0;
-}
-.active {
-  background-color: black;
-}
-.p-dock .p-dock-action{
+.p-dock .p-dock-action {
   width: fit-content;
 }
-.p-dock-left .p-dock-list{
+.p-dock-left .p-dock-list {
   border-top-right-radius: 59px;
   border-bottom-right-radius: 55px;
-  background-color: aliceblue;
+  // background-color: aliceblue;
   position: fixed;
   padding: 0;
-  top: 24%;
+  top: 15%;
+  // bottom: 35%;
 }
-.p-ripple{
-  text-decoration: none;
-}
-.box{
+.box {
   padding-top: 6px;
   padding-left: 6px;
 }
-.data{
+.data {
   padding-left: 120px;
 }
+.side {
+  a {
+    text-decoration: none !important;
+  }
+}
 @media screen and(max-width: 600px) {
-  .data{
+  .data {
     padding-left: 65px;
   }
+}
+.darkDock {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+.lightDock {
+  background-color: aliceblue;
 }

@@ -22,7 +22,10 @@
             {{ event.data.substring(200) }}
           </ng-template>
         </p>
-        <button class="btn btn-outline-primary" (click)="toggle(event.id)">
+        <button
+          class="btn btn-outline-primary round-btn"
+          (click)="toggle(event.id)"
+        >
           {{ event.showMore ? "Show More" : "Show Less" }}
         </button>
       </p-card>
@@ -37,7 +40,7 @@
         ><p-chip label="Ui code" icon="pi pi-github"></p-chip>
       </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" style="margin-bottom: 1rem">
       <a
         href="https://github.com/rohithreddydepa/majorProjectApi"
         style="text-decoration: none"
@@ -45,7 +48,7 @@
         <p-chip label="Api code" icon="pi pi-github"></p-chip>
       </a>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" style="margin-bottom: 1rem">
       <a
         href="https://github.com/aishwaryadevi4/MajorProjectML"
         style="text-decoration: none"
