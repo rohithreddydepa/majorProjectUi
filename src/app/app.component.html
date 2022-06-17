@@ -1,10 +1,17 @@
 <div class="theme-wrapper" (click)="changeTheme()">
-    <img
-      [src]="dTheme ? '../assets/light.svg' : '../assets/dark.svg'"
-      alt="Theme toggle"
-      class="theme-btn"
-    />
-</div>
-  <div [ngClass]="dTheme ? 'dark' : 'light'">
-      <app-sider-bar><router-outlet></router-outlet></app-sider-bar>
+  <div>
+    <i
+      class="bi bi-brightness-high theme-btn"
+      style="font-size: 1.5rem"
+      *ngIf="!dTheme"
+    ></i>
+    <i
+      class="bi bi-moon-stars theme-btn"
+      style="font-size: 1.5rem"
+      *ngIf="dTheme"
+    ></i>
   </div>
+</div>
+<div [ngClass]="dTheme ? 'dark' : 'light'">
+  <app-sider-bar><router-outlet></router-outlet></app-sider-bar>
+</div>
