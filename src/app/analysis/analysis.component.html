@@ -26,7 +26,11 @@
     </li>
     <div class="col-md-8" style="margin: auto">
       <p-card>
-        <p-chart type="doughnut" [data]="data" height="400"></p-chart>
+        <p-chart type="doughnut" [data]="data" height="400" *ngIf="!isApiFailed;else err"></p-chart>
+        <ng-template #err>Api failed.<br />
+          Please try later <br />
+          You can install the CORS error extension to resolve the CORS
+          error</ng-template>
       </p-card>
     </div>
     <li>

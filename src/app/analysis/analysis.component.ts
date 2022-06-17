@@ -12,8 +12,9 @@ export class AnalysisComponent implements OnInit {
   tags = [];
   tagCount = [];
   data = {};
+  isApiFailed=false;
   ngOnInit(): void {
-    this.http.get('/preprocessing').subscribe((res) => {
+    this.http.get('/preprocessing').subscribe({next:(res) => {
       this.data = {
         labels: Object.keys(res),
         datasets: [
@@ -36,6 +37,6 @@ export class AnalysisComponent implements OnInit {
           },
         ],
       };
-    });
+    },error:(err)=>{this.isApiFailed=true}});
   }
 }
