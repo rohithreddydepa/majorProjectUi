@@ -2,13 +2,7 @@
   <div>
     <i
       class="bi bi-brightness-high theme-btn"
-      style="font-size: 1.5rem"
-      *ngIf="!dTheme"
-    ></i>
-    <i
-      class="bi bi-moon-stars theme-btn"
-      style="font-size: 1.5rem"
-      *ngIf="dTheme"
+      [ngClass]="{ 'bi-brightness-high': !dTheme, 'bi-moon-stars': dTheme }"
     ></i>
   </div>
 </div>

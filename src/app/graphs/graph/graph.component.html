@@ -6,11 +6,16 @@
     height="300px"
   ></p-chart>
   <ng-template #error>
-    Api error <br />
-    Please try later <br />
-    You can install the CORS error extension to resolve the CORS
-    error</ng-template
-  >
+    <h3 class="text-center">Api error <i class="bi bi-bug"></i></h3>
+    <br />
+    <div style="text-align: left">
+      <h6>Try refresing the page</h6>
+      If this appeare again check in the console if you have CORS error if you
+      have,You can install the CORS error extension to resolve the CORS error
+      <br />
+      Even then if you can't resolve the issue please contact us
+    </div>
+  </ng-template>
 </p-card>
 <p-card *ngIf="isLoading">
   <div class="flex align-items-end">
