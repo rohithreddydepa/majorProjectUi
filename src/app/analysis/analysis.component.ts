@@ -12,31 +12,40 @@ export class AnalysisComponent implements OnInit {
   tags = [];
   tagCount = [];
   data = {};
-  isApiFailed=false;
+  isApiFailed = false;
+  isLoading = false;
   ngOnInit(): void {
-    this.http.get('/preprocessing').subscribe({next:(res) => {
-      this.data = {
-        labels: Object.keys(res),
-        datasets: [
-          {
-            data: Object.values(res),
-            backgroundColor: [
-              '#123b5e',
-              '#1f68a5',
-              '#2d95ec',
-              '#6cb4f1',
-              '#abd4f7',
-              '#eaf4fd',
-              '#123b5e',
-              '#1f68a5',
-              '#2d95ec',
-              '#6cb4f1',
-              '#abd4f7',
-              '#eaf4fd'             
-            ],
-          },
-        ],
-      };
-    },error:(err)=>{this.isApiFailed=true}});
+    this.isLoading = true;
+    this.http.get('/preprocessing').subscribe({
+      next: (res) => {
+        this.data = {
+          labels: Object.keys(res),
+          datasets: [
+            {
+              data: Object.values(res),
+              backgroundColor: [
+                '#123b5e',
+                '#1f68a5',
+                '#2d95ec',
+                '#6cb4f1',
+                '#abd4f7',
+                '#eaf4fd',
+                '#123b5e',
+                '#1f68a5',
+                '#2d95ec',
+                '#6cb4f1',
+                '#abd4f7',
+                '#eaf4fd',
+              ],
+            },
+          ],
+        };
+        this.isLoading = false;
+      },
+      error: (err) => {
+        this.isLoading = false;
+        this.isApiFailed = true;
+      },
+    });
   }
 }
