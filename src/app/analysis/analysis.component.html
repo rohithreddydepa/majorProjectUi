@@ -9,12 +9,15 @@
           like Stack Overflow, Coursera, Quora, Stack Overflow is one of the
           most popular online question-answer forums and there is a huge amount
           of information in this forum. So, to make the system efficient, it is
-          very necessary to detect the class to which a particular piece of
+          very necessary to detect the most probable class to which a particular piece of
           information belongs to.
           <span class="bold">This detection is called tagging.</span>
           It helps in easy retrieval and organization of data. Our project aims
           at developing a system for autonomously detecting the tags of Stack
-          Overflow questions using NLP and Machine Learning.
+          Overflow questions using NLP and Machine Learning.This will benefit both the
+          people who post questions and the ones who answer them. For answering, people can choose the topic
+          in which they are interested and can filter out the irrelevant questions. 
+          People who post questions can get the answers faster if the right tag is identified.
         </p>
       </div>
     </li>
@@ -24,10 +27,7 @@
           The size of the data is a hindrance to improve the system. Currently,
           websites like Quora are expecting users to manually enter the tags
           related to their queries. But, manual tagging is a difficulty for the
-          end user and causing poor user experience. This will benefit both the
-          questioning and answering people.Answering people can choose the topic
-          which they interset they can filter out the irrelevant question .And
-          Question people can get the answers fast if tag is predict
+          end user and causing poor user experience. 
         </p>
       </div>
     </li>
@@ -43,12 +43,12 @@
           <h3 class="text-center">Api error <i class="bi bi-bug"></i></h3>
           <br />
           <div style="text-align: left">
-            <h6>Try refresing the page</h6>
-            If this appeare again check in the console if you have CORS error if
-            you have,You can install the CORS error extension to resolve the
-            CORS error
+            <h6>Try refreshing the page</h6>
+            If this appears again check in the console if you have CORS error. If
+            you have, you can install the CORS error extension to resolve the
+            CORS error.
             <br />
-            Even then if you can't resolve the issue please contact us
+            Even then if you can't resolve the issue, please contact us.
           </div>
         </ng-template>
       </p-card>
@@ -63,21 +63,21 @@
     <li>
       <div class="row section">
         <p>
-          To solve this problem, we created a machine learning model using nlp.
-          which is build on the data
+          To solve this problem, we created a Machine Learning model using NLP.
+          which is built on a Kaggle dataset.
           <span class="bold">collected the data from the kaggel.</span>
-          The data optained from the kaggel has three fields title, body and the
-          tag in csv format (title is the heading of the question and body is
-          the discription of it) . there are
+          The data obtained from Kaggle has four fields-ID, Title, Body and the
+          associated Tag in CSV format (Title is the heading of the question and body is
+          its description). There are a
           <span class="bold">total of 6 millon records</span> in the dataset and
-          the count of each tag is in the above donut chart.
+          the count of few of the most frequent tags is in the donut chart above.
         </p>
       </div>
     </li>
     <li>
       <div class="row section">
         <p>
-          After the preprocessing the data, we are using a multi label
+          We first preprocess the data, we are using a multi label
           classification system that makes use of Natural Language Processing
           and good classifier algorithms to label the questions on the forums
           with their appropriate tags autonomously. This auto-labelling
@@ -89,9 +89,9 @@
     <li>
       <div class="row section">
         <p>
-          We have used this model in this website.In predict page user can paste
-          their question and enter predict so that api will respond the user
-          with the appropicate tag from the model . If it is unable to predict
+          We have used this model in this website.In predict page, user can paste
+          their question and enter predict so that API will respond to the user
+          with the appropriate tag from the model . If it is unable to predict
           the tag then it will ask for more data to predict.
         </p>
       </div>
@@ -100,7 +100,7 @@
   <!-- <hr style="border-top: 1px dashed red" /> -->
   This Project has a wide range of applications in multiple other websites that
   contain a lot of information or are question-answer based forums other than
-  Stack Overflow like Quora, Coursera etc. Ultimately we can make such platforms
+  Stack Overflow, like Quora, Coursera etc. Ultimately we can make such platforms
   capable of inferring the tags of posts autonomously and improve the user
   experience big time.
 </div>

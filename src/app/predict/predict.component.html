@@ -7,7 +7,7 @@
         <li>Enter the Question in the input field to Predict the tag .</li>
         <li>Input can't be empty or numeric</li>
         <li>
-          If we are unable to Predict the tag enter extra data to identify
+          If we are unable to predict the tag, enter extra data to identify
         </li>
       </ol>
     </div>
@@ -15,17 +15,13 @@
   <div class="row flex-center">
     <div class="col-md-6 text-center">
       <p-card>
-        <div class="row imp-margin-bottom">
-          <h6>Accuracy of our Current model is</h6>
-          <p-knob [(ngModel)]="accuracy" [readonly]="true"></p-knob>
-        </div>
         <div class="row">
           <div class="form-group">
             <span class="p-float-label p-input-icon-right">
               <textarea
                 pInputTextarea
-                rows="4"
-                cols="60"
+                rows="8"
+                cols="100"
                 class="form-control"
                 [ngClass]="{
                   'ng-invalid': error,
